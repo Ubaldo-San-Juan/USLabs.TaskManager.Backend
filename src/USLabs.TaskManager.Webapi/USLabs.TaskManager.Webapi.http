@@ -1,0 +1,6 @@
+@USLabs.TaskManager.Webapi_HostAddress = http://localhost:5047
+
+GET {{USLabs.TaskManager.Webapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

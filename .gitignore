@@ -1,0 +1,42 @@
+# === Archivos y carpetas específicos del proyecto ===
+# Ignorar bin/ y obj/ del proyecto Backend
+src/USLabs.TaskManager.Business/bin/*
+src/USLabs.TaskManager.Business/obj/*
+
+src/USLabs.TaskManager.Data/bin/*
+src/USLabs.TaskManager.Data/obj/*
+
+src/USLabs.TaskManager.Shared/bin/*
+src/USLabs.TaskManager.Shared/obj/*
+
+src/USLabs.TaskManager.Webapi/bin/*
+src/USLabs.TaskManager.Webapi/obj/*
+
+# Ignorar archivos de usuario (VS/Rider)
+src/USLabs.TaskManager.Webapi/*.user
+src/USLabs.TaskManager.Webapi/*.suo
+
+# Ignorar configuraciones locales de desarrollo
+src/USLabs.TaskManager.Webapi/appsettings.Development.json
+
+# === Carpetas de IDEs/Editors ===
+# Visual Studio
+.vs/
+*.vscode/
+
+# Rider/IntelliJ
+.idea/
+
+# === Archivos generados ===
+*.DS_Store
+*.cache
+*.log
+*.tmp
+*.nupkg
+
+# === Dependencias ===
+# Paquetes NuGet locales (opcional)
+packages/
+
+# Rider solution DotSettings user file
+USLabs.TaskManager.Backend.sln.DotSettings.user
