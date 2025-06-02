@@ -132,6 +132,12 @@ namespace USLabs.TaskManager.Data.Context
                 .WithMany(u => u.TaskItems)
                 .HasForeignKey(t => t.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskItem>()
+                .HasOne(t => t.Category)
+                .WithMany(c => c.TaskItems)
+                .HasForeignKey(t => t.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
