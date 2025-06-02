@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace USLabs.TaskManager.Data.Entities
 {
@@ -19,6 +20,10 @@ namespace USLabs.TaskManager.Data.Entities
         public Guid UserId { get; set; }
 
         // Navigation property for User
+        [ForeignKey("UserId")]
         public virtual User? User { get; set; }
+
+        // Navigation property for TaskItems
+        public virtual ICollection<TaskItem>? TaskItems { get; set; } = new List<TaskItem>();
     }
 }

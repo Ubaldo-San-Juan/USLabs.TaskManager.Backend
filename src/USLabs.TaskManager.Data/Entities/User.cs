@@ -25,6 +25,7 @@ namespace USLabs.TaskManager.Data.Entities
         public bool IsActive { get; set; } = true;
 
         // Navigation properties
-
+        public virtual ICollection<Category>? Categories { get; set; }
+        public virtual ICollection<TaskItem>? TaskItems { get; set; }     
     }
 }

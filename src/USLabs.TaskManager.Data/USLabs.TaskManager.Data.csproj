@@ -14,4 +14,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\USLabs.TaskManager.Shared\USLabs.TaskManager.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
