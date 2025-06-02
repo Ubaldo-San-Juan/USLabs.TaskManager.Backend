@@ -8,10 +8,10 @@ namespace USLabs.TaskManager.Data.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-                // Methods for get users
-        public Task<User> GetUserByIdAsync(Guid id);
-        public Task<User> GetUserByEmailAsync(string email);
-        public Task<IEnumerable<User>> GetAllUsersAsync();
+        // Methods for get users
+        public Task<User?> GetUserByIdAsync(Guid id);
+        public Task<User?> GetUserByEmailAsync(string email);
+        public Task<IEnumerable<User?>> GetAllUsersAsync();
 
         // Methods for cruds for user
         Task<User> CreateUserAsync(User user);
@@ -20,6 +20,5 @@ namespace USLabs.TaskManager.Data.Repositories.Interfaces
         // Methods for check if userdata exists
         Task<bool> ExistsUserAsync(Guid id);
         Task<bool> ExistsEmailAsync(string email);
-        Task<bool> UserNameExistsAsync(string username);
     }
 }
