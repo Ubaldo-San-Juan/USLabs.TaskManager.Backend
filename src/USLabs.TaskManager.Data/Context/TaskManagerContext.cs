@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using USLabs.TaskManager.Data.Entities;
 
@@ -6,23 +7,12 @@ namespace USLabs.TaskManager.Data.Context
 {
     public class TaskManagerContext : DbContext
     {
-        public TaskManagerContext() { }
-        public TaskManagerContext(DbContextOptions<TaskManagerContext> options) : base(options) { }
+        public TaskManagerContext(DbContextOptions<TaskManagerContext> options) : base(options) {}
 
         // DbSets for entities
         public DbSet<TaskItem> TaskItems { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("YourConnectionStringHere")
-                .LogTo(
-                    Console.WriteLine,
-                    new[] { DbLoggerCategory.Database.Command.Name },
-                    LogLevel.Information
-                ).EnableSensitiveDataLogging();
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -132,7 +122,7 @@ namespace USLabs.TaskManager.Data.Context
                 .HasOne(t => t.User)
                 .WithMany(u => u.TaskItems)
                 .HasForeignKey(t => t.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<TaskItem>()
                 .HasOne(t => t.Category)

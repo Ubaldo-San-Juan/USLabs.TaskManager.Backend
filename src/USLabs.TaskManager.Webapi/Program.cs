@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using USLabs.TaskManager.Data.Context;
-
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,10 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<TaskManagerContext>( options =>
+builder.Services.AddDbContext<TaskManagerContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conexionString"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conexionString"))
+           .LogTo(Console.WriteLine, new[] { 
+               Database.Command.Name 
+           }, LogLevel.Information)
+           .EnableSensitiveDataLogging();
 });
+
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 var app = builder.Build();
 
