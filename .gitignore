@@ -24,6 +24,9 @@ src/USLabs.TaskManager.Webapi/appsettings.Development.json
 .vs/
 *.vscode/
 
+# Ignorar variables de entorno
+.env
+
 # Rider/IntelliJ
 .idea/
 
