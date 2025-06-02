@@ -120,6 +120,18 @@ namespace USLabs.TaskManager.Data.Context
                 .HasIndex(c => c.DueDate)
                 .HasDatabaseName("IX_TaskItems_DueDate");
 
+            // Relationships
+            modelBuilder.Entity<Category>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Categories)
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskItem>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.TaskItems)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
