@@ -5,6 +5,7 @@ src/USLabs.TaskManager.Business/obj/*
 
 src/USLabs.TaskManager.Data/bin/*
 src/USLabs.TaskManager.Data/obj/*
+src/USLabs.TaskManager.Data/appsettings.Development.json
 
 src/USLabs.TaskManager.Shared/bin/*
 src/USLabs.TaskManager.Shared/obj/*
