@@ -6,6 +6,7 @@ namespace USLabs.TaskManager.Data.Context
 {
     public class TaskManagerContext : DbContext
     {
+        public TaskManagerContext() { }
         public TaskManagerContext(DbContextOptions<TaskManagerContext> options) : base(options) { }
 
         // DbSets for entities
