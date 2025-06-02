@@ -12,11 +12,14 @@ namespace USLabs.TaskManager.Data.Entities
         [Required]
         [MaxLength(200)]
         public string? Title { get; set; }
+
         [Required]
         [MaxLength(500)]
         public string? Description { get; set; }
+
         [Required]
         public TaskStatusU Status { get; set; } = TaskStatusU.Pending;
+
         [Required]
         public Priority Priority { get; set; } = Priority.Medium;
 
