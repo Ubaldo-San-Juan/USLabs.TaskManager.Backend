@@ -9,9 +9,9 @@ namespace USLabs.TaskManager.Data.Repositories.Interfaces
     public interface IUserRepository
     {
         // Methods for get users
-        public Task<User?> GetUserByIdAsync(Guid id);
-        public Task<User?> GetUserByEmailAsync(string email);
-        public Task<IEnumerable<User?>> GetAllUsersAsync();
+        Task<User?> GetUserByIdAsync(Guid id);
+        Task<User?> GetUserByEmailAsync(string email);
+        Task<IEnumerable<User?>> GetAllUsersAsync();
 
         // Methods for cruds for user
         Task<User> CreateUserAsync(User user);
