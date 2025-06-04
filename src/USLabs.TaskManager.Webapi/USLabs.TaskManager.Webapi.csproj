@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\USLabs.TaskManager.Data\USLabs.TaskManager.Data.csproj" />
+    <ProjectReference Include="..\USLabs.TaskManager.Business\USLabs.TaskManager.Business.csproj" />
   </ItemGroup>
 
 </Project>
