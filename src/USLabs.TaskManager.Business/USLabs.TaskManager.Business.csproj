@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\USLabs.TaskManager.Data\USLabs.TaskManager.Data.csproj" />
+    <ProjectReference Include="..\USLabs.TaskManager.Shared\USLabs.TaskManager.Shared.csproj" />
   </ItemGroup>
 
 </Project>
