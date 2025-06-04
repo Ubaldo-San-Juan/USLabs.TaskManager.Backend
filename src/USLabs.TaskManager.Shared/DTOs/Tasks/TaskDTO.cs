@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using USLabs.TaskManager.Shared.DTOs.Auth;
+using USLabs.TaskManager.Shared.DTOs.Categories;
 using USLabs.TaskManager.Shared.Enums;
 
 namespace USLabs.TaskManager.Shared.DTOs.Tasks
